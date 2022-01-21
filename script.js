@@ -10,6 +10,11 @@ const prevBtn = document.getElementById('prev');
 const playBtn = document.getElementById('play');
 const nextBtn = document.getElementById('next');
 
+
+const port = process.env.PORT || 3000
+
+
+
 // Music
 const songs = [
   
@@ -119,3 +124,9 @@ nextBtn.addEventListener('click', nextSong);
 music.addEventListener('ended', nextSong);
 music.addEventListener('timeupdate', updateProgressBar);
 progressContainer.addEventListener('click', setProgressBar);
+
+
+
+server.listen(port, () => {
+  console.log(`Server is up on port ${port}!`)
+})
